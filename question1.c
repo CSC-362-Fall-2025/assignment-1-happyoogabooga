@@ -11,7 +11,7 @@ int main(int argc, char* argv[]){
     scanf("%d", &amount);
   }
 
-  int * arr = (int*)malloc(sizeof(int) * amount);
+  int * arr = (int*)calloc(amount, sizeof(int));
   for(int i = 0; i < amount; i++){
     int element = 0;
     printf("\nenter some numbers for this array:");
@@ -26,5 +26,6 @@ int main(int argc, char* argv[]){
   }
   //free our array
   free(arr);
+  arr = NULL;
   return 0;
 }
